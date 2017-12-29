@@ -15,9 +15,9 @@ $itemsQuery->execute([
 
 $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 
-foreach ($items as $item) {
-    echo $item['name'], '<br>';
-}
+//foreach ($items as $item) {
+//    echo $item['name'], '<br>';
+//}
 ?>
 
 <!DOCTYPE html>
@@ -36,15 +36,22 @@ foreach ($items as $item) {
         <div class="list">
             <h1 class="header">to do</h1>
 
+            <?php if(!empty($items)): ?>
+
             <ul class="items">
+                <?php foreach ($items as $item): ?>
                 <li>
-                    <span class="item">Pick up shopping</span>
+                    <span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name']; ?></span>
+                    <?php if(!$item['done']): ?>
                     <a href="#" class="done-button">Mark as done</a>
+                    <?php endif; ?>
                 </li>
-                <li>
-                    <span class="item done">Learn php</span>
-                </li>
+                <?php endforeach; ?>
+
             </ul>
+            <?php else: ?>
+                <p>You haven't added any items</p>
+            <?php endif; ?>
 
             <form class="item-add" action="add.php" method="post">
                 <input type="text" name="name" placeholder="What you gonna do." class="input" autocomplete="off" required>

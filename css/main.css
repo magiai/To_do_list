@@ -16,6 +16,7 @@ a {
 /*list*/
 .list {
     background-color: #CA4A0D;
+    text-align: center;
     margin: 20px auto;
     width: 100%;
     max-width: 500px;
@@ -62,5 +63,15 @@ a {
     padding: 3px 6px;
     border: 0px;
     opacity: 0.4;
+}
+
+/*submit*/
+.submit {
+    background-color: #2E7313;
+    padding: 5px 10px;
+    border: 1px solid #1A1D73;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 1px 1px #1A1D73;
 
 }
