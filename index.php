@@ -36,9 +36,14 @@ foreach ($items as $item) {
         <div class="list">
             <h1 class="header">to do</h1>
 
-            <ul>
-                <li><span class="item">Pick up shopping</span></li>
-                <li><span class="item done">Learn php</span></li>
+            <ul class="items">
+                <li>
+                    <span class="item">Pick up shopping</span>
+                    <a href="#" class="done-button">Mark as done</a>
+                </li>
+                <li>
+                    <span class="item done">Learn php</span>
+                </li>
             </ul>
 
             <form class="item-add" action="add.php" method="post">
